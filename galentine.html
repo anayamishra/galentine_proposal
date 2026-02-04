@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galentine's Proposal</title>
+    <style>
+        body {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">💖</text></svg>') repeat;
+            background-color: #ffb6c1; /* Light pink fallback */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: white;
+            font-weight: bolder; /* Doubled boldness */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 4em; /* Doubled size */
+            margin-bottom: 40px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 2.4em; /* Doubled size */
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bolder; /* Doubled boldness */
+        }
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        #no:hover {
+            transform: translateX(100px); /* Moves right on hover */
+        }
+    </style>
+</head>
+<body>
+    <div id="proposal">
+        <h1>Ashwina, Will You Be My Galentine?💌🥹</h1>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+    </div>
+    <div id="response" style="display: none;">
+        <h1>I knew you'd say yes babe, I Love You So Much🩷💋</h1>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const proposalDiv = document.getElementById('proposal');
+        const responseDiv = document.getElementById('response');
+
+        yesButton.addEventListener('click', () => {
+            proposalDiv.style.display = 'none';
+            responseDiv.style.display = 'block';
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            // Randomly move the button to a new position
+            const randomX = Math.random() * (window.innerWidth - 100);
+            const randomY = Math.random() * (window.innerHeight - 100);
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
